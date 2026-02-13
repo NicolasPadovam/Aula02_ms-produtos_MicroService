@@ -13,20 +13,25 @@ import java.util.List;
 @RequestMapping("/produtos")
 public class ProdutoController {
 
+//PRIMEIRO COMMIT
+//    @GetMapping
+//    public ResponseEntity<List<ProdutoResponseDTO>> getProdutos() {
+//        List<ProdutoResponseDTO> dto = ProdutoResponseDTO.createMock();
+//        return ResponseEntity.ok(dto);
+//    }
+//
+//
+//    @PostMapping
+//    public ResponseEntity<ProdutoResponseDTO> createProdutos(@RequestBody ProdutoInputDTO inputDTO) {
+//        ProdutoResponseDTO dto = new ProdutoResponseDTO(1L, inputDTO.getNome(), inputDTO.getDesc(), inputDTO.getValor());
+//
+//        return ResponseEntity.created(null).body(dto);
+//    }
 
-    @GetMapping
-    public ResponseEntity<List<ProdutoResponseDTO>> getProdutos() {
-        List<ProdutoResponseDTO> dto = ProdutoResponseDTO.createMock();
-        return ResponseEntity.ok(dto);
-    }
 
 
-    @PostMapping
-    public ResponseEntity<ProdutoResponseDTO> createProdutos(@RequestBody ProdutoInputDTO inputDTO) {
-        ProdutoResponseDTO dto = new ProdutoResponseDTO(1L, inputDTO.getNome(), inputDTO.getDesc(), inputDTO.getValor());
 
-        return ResponseEntity.created(null).body(dto);
-    }
+
 
 
 }
