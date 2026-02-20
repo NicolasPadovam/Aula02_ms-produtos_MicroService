@@ -1,8 +1,11 @@
 package com.github.nicolaspadovam.ms.produto.controller;
 
+import com.github.nicolaspadovam.ms.produto.dto.ProdutoDTO;
 import com.github.nicolaspadovam.ms.produto.dto.ProdutoInputDTO;
 import com.github.nicolaspadovam.ms.produto.dto.ProdutoResponseDTO;
 import com.github.nicolaspadovam.ms.produto.entities.Produto;
+import com.github.nicolaspadovam.ms.produto.service.ProdutoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +16,7 @@ import java.util.List;
 @RequestMapping("/produtos")
 public class ProdutoController {
 
-//PRIMEIRO COMMIT
+    //PRIMEIRO COMMIT
 //    @GetMapping
 //    public ResponseEntity<List<ProdutoResponseDTO>> getProdutos() {
 //        List<ProdutoResponseDTO> dto = ProdutoResponseDTO.createMock();
@@ -27,11 +30,21 @@ public class ProdutoController {
 //
 //        return ResponseEntity.created(null).body(dto);
 //    }
+    @Autowired
+    private ProdutoService produtoService;
 
+    @GetMapping
+    public ResponseEntity<List<ProdutoDTO>> getAllProdutos() {
 
+        List<ProdutoDTO> list = produtoService.findAllProdutos();
+        return ResponseEntity.ok(list);
+    }
 
-
-
+    @GetMapping("/{id}")
+    public ResponseEntity<ProdutoDTO> getProdutoById(@PathVariable Long id) {
+        ProdutoDTO produtoDTO = produtoService.findProdutoById(id);
+        return ResponseEntity.ok(produtoDTO);
+    }
 
 
 }
