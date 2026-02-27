@@ -25,7 +25,7 @@ public class ProdutoDTO {
     private String desc;
 
     @NotNull(message = "Campo valor é obrigatório")
-    @Positive(message = "O valor deve ser um número psitivo maior que zero")
+    @Positive(message = "O valor deve ser um número positivo maior que zero")
     private Double valor;
 
     public ProdutoDTO(Produto produto) {
